@@ -1,23 +1,48 @@
+import { useState } from "react";
 import "./App.css";
 
-function AddBtn() {
-  return <h1>AddBtn</h1>;
+function AddBtn({ handle }) {
+  return (
+    <button className="btn" onClick={handle}>
+      <span>+</span>
+    </button>
+  );
 }
 
-function MinusBtn() {
-  return <h1>MinusBtn</h1>;
+function MinusBtn({ handle }) {
+  return (
+    <button onClick={handle} className="btn">
+      <span>-</span>
+    </button>
+  );
 }
 
-function Counter() {
-  return <h1>Counter</h1>;
+function Counter({ count }) {
+  return (
+    <div className="btn">
+      <span>{count}</span>
+    </div>
+  );
 }
 
 function AppContainer() {
+  let [count, setCount] = useState(0);
+
+  const handleMinus = (e) => {
+    let result = (count -= 1);
+    setCount(result);
+  };
+
+  const handlePlus = (e) => {
+    let result = (count += 1);
+    setCount(result);
+  };
+
   return (
     <>
-      <Counter />
-      <AddBtn />
-      <MinusBtn />
+      <Counter count={count} />
+      <AddBtn handle={handlePlus} />
+      {count ? <MinusBtn handle={handleMinus} /> : ""}
     </>
   );
 }

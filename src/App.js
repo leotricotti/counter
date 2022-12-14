@@ -28,12 +28,12 @@ function Counter({ count }) {
 function AppContainer() {
   let [count, setCount] = useState(0);
 
-  const handleMinus = (e) => {
+  const handleMinus = () => {
     let result = (count -= 1);
     setCount(result);
   };
 
-  const handlePlus = (e) => {
+  const handlePlus = () => {
     let result = (count += 1);
     setCount(result);
   };

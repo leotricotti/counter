@@ -3,7 +3,7 @@ import "./App.css";
 
 function AddBtn({ handle }) {
   return (
-    <button className="btn" onClick={handle}>
+    <button className="btn btn-plus" onClick={handle}>
       <span>+</span>
     </button>
   );
@@ -11,8 +11,8 @@ function AddBtn({ handle }) {
 
 function MinusBtn({ handle }) {
   return (
-    <button onClick={handle} className="btn">
-      <span>-</span>
+    <button onClick={handle} className="btn btn-minus">
+      <span>─</span>
     </button>
   );
 }

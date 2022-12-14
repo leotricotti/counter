@@ -19,8 +19,8 @@ function MinusBtn({ handle }) {
 
 function Counter({ count }) {
   return (
-    <div className="btn">
-      <span>{count}</span>
+    <div className="counter">
+      <span className="count">{count}</span>
     </div>
   );
 }
@@ -39,17 +39,17 @@ function AppContainer() {
   };
 
   return (
-    <>
+    <main className="appContainer">
       <Counter count={count} />
       <AddBtn handle={handlePlus} />
       {count ? <MinusBtn handle={handleMinus} /> : ""}
-    </>
+    </main>
   );
 }
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <AppContainer />
     </div>
   );
